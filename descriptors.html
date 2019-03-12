@@ -266,6 +266,38 @@ This subroutine parses the options given in the gap string, for each GAP.</p>
 </table>
 </dd></dl>
 
+<dl class="class">
+<dt id="gap.descriptors.sparse_method">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">sparse_method</code><a class="headerlink" href="#gap.descriptors.sparse_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>sparse_method options are:</p>
+<ul class="simple">
+<li><strong>RANDOM</strong>: default, chooses n_sparse random datapoints</li>
+<li><strong>PIVOT</strong>: based on the full covariance matrix finds the n_sparse “pivoting” points</li>
+<li><strong>CLUSTER</strong>: based on the full covariance matrix performs a k-medoid clustering into n_sparse clusters, returning the medoids</li>
+<li><strong>UNIFORM</strong>: makes a histogram of the data based on n_sparse and returns a data point from each bin</li>
+<li><strong>KMEANS</strong>: k-means clustering based on the data points</li>
+<li><strong>COVARIANCE</strong>: greedy data point selection based on the sparse covariance matrix, to minimise the GP variance of all datapoints</li>
+<li><strong>UNIQ</strong>: selects unique datapoints from the dataset</li>
+<li><strong>FUZZY</strong>: fuzzy k-means clustering</li>
+<li><strong>FILE</strong>: reads sparse points from a file</li>
+<li><strong>INDEX_FILE</strong>: reads indices of sparse points from a file</li>
+<li><strong>CUR_COVARIANCE</strong>: CUR, based on the full covariance matrix</li>
+<li><strong>CUR_POINTS</strong>: CUR, based on the datapoints</li>
+</ul>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.covariance_type">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">covariance_type</code><a class="headerlink" href="#gap.descriptors.covariance_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of covariance function to use. Available:</p>
+<ul class="simple">
+<li><strong>ARD_SE</strong>,</li>
+<li><strong>DOT_PRODUCT</strong>,</li>
+<li><strong>BOND_REAL_SPACE</strong>,</li>
+<li><strong>PP</strong>: piecewise polynomial</li>
+</ul>
+</dd></dl>
+
 <div class="section" id="module-gap.descriptors">
 <span id="list-of-descriptors"></span><h2>List of descriptors<a class="headerlink" href="#module-gap.descriptors" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -323,11 +355,6 @@ This subroutine parses the options given in the gap string, for each GAP.</p>
 </tbody>
 </table>
 </dd></dl>
-
-<dl class="exception">
-<dt id="gap.descriptors.MissingParameter">
-<em class="property">exception </em><code class="descclassname">gap.descriptors.</code><code class="descname">MissingParameter</code><span class="sig-paren">(</span><em>parameter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.MissingParameter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="class">
 <dt id="gap.descriptors.alex">
@@ -586,18 +613,6 @@ This subroutine parses the options given in the gap string, for each GAP.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="gap.descriptors.covariance_type">
-<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">covariance_type</code><a class="headerlink" href="#gap.descriptors.covariance_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Type of covariance function to use. Available:</p>
-<ul class="simple">
-<li><strong>ARD_SE</strong>,</li>
-<li><strong>DOT_PRODUCT</strong>,</li>
-<li><strong>BOND_REAL_SPACE</strong>,</li>
-<li><strong>PP</strong>: piecewise polynomial</li>
-</ul>
-</dd></dl>
-
-<dl class="class">
 <dt id="gap.descriptors.distance_2b">
 <em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">distance_2b</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>cutoff_transition_width=0.5</em>, <em>Z1=0</em>, <em>Z2=0</em>, <em>resid_name=''</em>, <em>only_intra=False</em>, <em>only_inter=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.distance_2b" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -853,26 +868,6 @@ This subroutine parses the options given in the gap string, for each GAP.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="gap.descriptors.sparse_method">
-<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">sparse_method</code><a class="headerlink" href="#gap.descriptors.sparse_method" title="Permalink to this definition">¶</a></dt>
-<dd><p>sparse_method options are:</p>
-<ul class="simple">
-<li><strong>RANDOM</strong>: default, chooses n_sparse random datapoints</li>
-<li><strong>PIVOT</strong>: based on the full covariance matrix finds the n_sparse “pivoting” points</li>
-<li><strong>CLUSTER</strong>: based on the full covariance matrix performs a k-medoid clustering into n_sparse clusters, returning the medoids</li>
-<li><strong>UNIFORM</strong>: makes a histogram of the data based on n_sparse and returns a data point from each bin</li>
-<li><strong>KMEANS</strong>: k-means clustering based on the data points</li>
-<li><strong>COVARIANCE</strong>: greedy data point selection based on the sparse covariance matrix, to minimise the GP variance of all datapoints</li>
-<li><strong>UNIQ</strong>: selects unique datapoints from the dataset</li>
-<li><strong>FUZZY</strong>: fuzzy k-means clustering</li>
-<li><strong>FILE</strong>: reads sparse points from a file</li>
-<li><strong>INDEX_FILE</strong>: reads indices of sparse points from a file</li>
-<li><strong>CUR_COVARIANCE</strong>: CUR, based on the full covariance matrix</li>
-<li><strong>CUR_POINTS</strong>: CUR, based on the datapoints</li>
-</ul>
-</dd></dl>
-
-<dl class="class">
 <dt id="gap.descriptors.trihis">
 <em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">trihis</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>n_gauss=0</em>, <em>trihis_gauss_centre=None</em>, <em>trihis_gauss_width=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.trihis" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -923,6 +918,11 @@ This subroutine parses the options given in the gap string, for each GAP.</p>
 </tbody>
 </table>
 </dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.MissingParameter">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">MissingParameter</code><span class="sig-paren">(</span><em>parameter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.MissingParameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 </div>
