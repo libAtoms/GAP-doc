@@ -11,8 +11,10 @@ jobs:
       branches:
         only:
           - master
+      before_install:
+        - sudo apt-get install pandoc
       install:
-        - pip install sphinx sphinx-rtd-theme nbsphinx pandoc
+        - pip install sphinx sphinx-rtd-theme nbsphinx
       #  - pip install .
       script:
         - cd docs; make html
