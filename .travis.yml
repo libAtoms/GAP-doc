@@ -12,10 +12,9 @@ jobs:
         only:
           - master
       before_install:
-        - sudo apt-get install pandoc
+        - sudo apt-get install -y pandoc
       install:
         - pip install sphinx sphinx-rtd-theme nbsphinx
-      #  - pip install .
       script:
         - cd docs; make html
       deploy:
