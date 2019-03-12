@@ -14,20 +14,19 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
 
+sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = u'GAP Wrapper'
-copyright = u'2019, Adam Fekete'
-author = u'Adam Fekete'
+project = u'GAP Documentation'
+copyright = u''
+author = u'Gabor Csanyi'
 
 # The short X.Y version
 version = u''
 # The full version, including alpha/beta/rc tags
 release = u'0.1'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -39,11 +38,14 @@ release = u'0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'nbsphinx',
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
 ]
+
+nbsphinx_allow_errors = True
 
 # Napoleon settings
 napoleon_google_docstring = True
@@ -65,7 +67,7 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.ipynb']
 
 # The master toctree document.
 master_doc = 'index'
@@ -80,11 +82,10 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -135,8 +136,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'GAPWrapperdoc'
-
+htmlhelp_basename = 'GAPdoc'
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -166,7 +166,6 @@ latex_documents = [
      u'Adam Fekete', 'manual'),
 ]
 
-
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
@@ -175,7 +174,6 @@ man_pages = [
     (master_doc, 'gapwrapper', u'GAP Wrapper Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output ----------------------------------------------
 
@@ -187,7 +185,6 @@ texinfo_documents = [
      author, 'GAPWrapper', 'One line description of project.',
      'Miscellaneous'),
 ]
-
 
 # -- Options for Epub output -------------------------------------------------
 
@@ -205,6 +202,5 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
-
 
 # -- Extension configuration -------------------------------------------------

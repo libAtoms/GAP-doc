@@ -92,10 +92,6 @@ class covariance_type(Enum):
 
 
 class Descriptor(object):
-    pass
-
-
-class DescriptorNew(object):
     """ GAP options
     This subroutine parses the options given in the gap string, for each GAP.
 
@@ -154,7 +150,6 @@ class DescriptorNew(object):
         self.mark_sparse_atoms = mark_sparse_atoms
         self.n_sparse = n_sparse
         self.print_sparse_index = print_sparse_index
-
 
         self.sparse_file = sparse_file
         self.sparse_method = sparse_method
@@ -223,7 +218,7 @@ class behler(Descriptor):
         pass
 
 
-class distance_2b(DescriptorNew):
+class distance_2b(Descriptor):
     """distance_2b
 
     Args:
