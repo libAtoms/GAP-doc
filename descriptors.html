@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Descriptors &mdash; GAP Wrapper 0.1 documentation</title>
+  <title>Descriptors &mdash; GAP Documentation 0.1 documentation</title>
   
 
   
@@ -50,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> GAP Wrapper
+            <a href="index.html" class="icon icon-home"> GAP Documentation
           
 
           
@@ -84,8 +84,31 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#first-exmaple">First exmaple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#precompiled-containers">Precompiled Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#compilation-instructions">Compilation Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#quick-start">Quick start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#step-by-step">Step by step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#installing-the-jupyter-notebook">Installing the Jupyter notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#custom-settings">Custom settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#common-problems">Common Problems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#permission-errors-when-installing">Permission errors when installing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#installing-on-mac-os-x-with-macports">Installing on Mac OS X with macports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#runtimeerror-when-importing">RuntimeError when importing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#importerror-when-importing">ImportError when importing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#possible-problems-installing-atomeye-module">Possible problems installing atomeye module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#error-compiling-ipmodel-gap">Error compiling IPModel_GAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#warning-about-quippy-castep-when-importing-quippy">Warning about <code class="docutils literal notranslate"><span class="pre">quippy.castep</span></code> when importing quippy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#internal-compiler-error-with-ifort">Internal compiler error with <cite>ifort</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#linking-error-on-mac-os-x">Linking error on Mac OS X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#segmentation-faults-with-openblas">Segmentation Faults with OpenBLAS</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gap.html">Learning GAP</a><ul>
@@ -110,11 +133,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#descriptors">Descriptors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#learning-charges">Learning charges</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#si-surface">Si surface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#crack-propagation">Crack propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/quippy-descriptor-tutorial.html">Using Quippy to compute descriptors of atomic environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/quippy-descriptor-tutorial.html#A-simple-descriptor:-pairwise-distances">A simple descriptor: pairwise distances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/quippy-descriptor-tutorial.html#A-many-body-descriptor:-SOAP">A many-body descriptor: SOAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/quippy-descriptor-tutorial.html#General_monomer-example:-benzene">General_monomer example: benzene</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -131,7 +156,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">GAP Wrapper</a>
+          <a href="index.html">GAP Documentation</a>
         
       </nav>
 
@@ -181,9 +206,66 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="descriptors">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<span class="target" id="module-gap.descriptors"></span><div class="section" id="descriptors">
 <h1>Descriptors<a class="headerlink" href="#descriptors" title="Permalink to this headline">¶</a></h1>
 <p>Descriptors for atomic environments</p>
+<dl class="class">
+<dt id="gap.descriptors.Descriptor">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">Descriptor</code><span class="sig-paren">(</span><em>covariance_type=None</em>, <em>delta=None</em>, <em>Name='Default'</em>, <em>add_species=False</em>, <em>config_type_n_sparse=None</em>, <em>f0=0.0</em>, <em>mark_sparse_atoms=False</em>, <em>n_sparse=0</em>, <em>print_sparse_index=None</em>, <em>sparse_file=None</em>, <em>sparse_method=&lt;sparse_method.RANDOM: 'RANDOM'&gt;</em>, <em>theta_fac=1.0</em>, <em>theta_file=None</em>, <em>theta_uniform=0.0</em>, <em>unique_descriptor_tolerance=1e-10</em>, <em>unique_hash_tolerance=1e-10</em>, <em>zeta=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.Descriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>GAP options
+This subroutine parses the options given in the gap string, for each GAP.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>covariance_type</strong> (<a class="reference internal" href="#gap.descriptors.covariance_type" title="gap.descriptors.covariance_type"><em>covariance_type</em></a>) – Type of covariance function to use. Available: ARD_SE, DOT_PRODUCT, BOND_REAL_SPACE, PP (piecewise polynomial)</li>
+<li><strong>delta</strong> (<em>float</em>) – Set the standard deviation of the Gaussian process. Typically this would be set to the standard deviation (i.e. root mean square) of the function that is approximated with the Gaussian process.</li>
+<li><strong>add_species</strong> (<em>bool</em>) – Create species-specific descriptor, using the descriptor string as a template.</li>
+<li><strong>config_type_n_sparse</strong> (<em>str</em>) – Number of sparse points in each config type. Format: {type1:50:type2:100}</li>
+<li><strong>f0</strong> (<em>float</em>) – Set the mean of the Gaussian process. Defaults to 0.</li>
+<li><strong>mark_sparse_atoms</strong> (<em>bool</em>) – Reprints the original xyz file after sparsification process. sparse propery added, true for atoms associated with a sparse point.</li>
+<li><strong>n_sparse</strong> (<em>int</em>) – Number of sparse points to use in the sparsification of the Gaussian process</li>
+<li><strong>print_sparse_index</strong> (<em>str</em>) – If given, after determinining the sparse points, their 1-based indices are appended to this file</li>
+<li><strong>sparse_file</strong> (<em>str</em>) – Sparse points from a file. Integers, in single line.</li>
+<li><strong>sparse_method</strong> (<a class="reference internal" href="#gap.descriptors.sparse_method" title="gap.descriptors.sparse_method"><em>sparse_method</em></a>) – Sparsification method. RANDOM(default), PIVOT, CLUSTER, UNIFORM, KMEANS, COVARIANCE, NONE, FUZZY, FILE, INDEX_FILE, CUR_COVARIANCE, CUR_POINTS</li>
+<li><strong>theta_fac</strong> (<em>str</em>) – Set the width of Gaussians for the ARD_SE and PP kernel by multiplying the range of each descriptor by theta_fac. Can be a single number or different for each dimension. For multiple theta_fac separate each value by whitespaces.</li>
+<li><strong>theta_file</strong> (<em>str</em>) – Set the width of Gaussians for the ARD_SE kernel from a file. There should be as many real numbers as the number of dimensions, in a single line</li>
+<li><strong>theta_uniform</strong> (<em>float</em>) – Set the width of Gaussians for the ARD_SE and PP kernel, same in each dimension.</li>
+<li><strong>unique_descriptor_tolerance</strong> (<em>float</em>) – Descriptor tolerance when filtering out duplicate data points</li>
+<li><strong>unique_hash_tolerance</strong> (<em>float</em>) – Hash tolerance when filtering out duplicate data points</li>
+<li><strong>zeta</strong> (<em>float</em>) – Exponent of soap type dot product covariance kernel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <div class="section" id="module-gap.descriptors">
 <span id="list-of-descriptors"></span><h2>List of descriptors<a class="headerlink" href="#module-gap.descriptors" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -235,39 +317,6 @@
 <li><strong>atomic_number</strong> (<em>int</em>) – Atomic number in AN_monomer-type descriptors</li>
 <li><strong>N</strong> (<em>int</em>) – Number of atoms in cluster</li>
 <li><strong>do_atomic</strong> (<em>bool</em>) – Descriptors are cluster based or atom-based</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
-<dt id="gap.descriptors.DescriptorNew">
-<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">DescriptorNew</code><span class="sig-paren">(</span><em>covariance_type=None</em>, <em>delta=None</em>, <em>Name='Default'</em>, <em>add_species=False</em>, <em>config_type_n_sparse=None</em>, <em>f0=0.0</em>, <em>mark_sparse_atoms=False</em>, <em>n_sparse=0</em>, <em>print_sparse_index=None</em>, <em>sparse_file=None</em>, <em>sparse_method=&lt;sparse_method.RANDOM: 'RANDOM'&gt;</em>, <em>theta_fac=1.0</em>, <em>theta_file=None</em>, <em>theta_uniform=0.0</em>, <em>unique_descriptor_tolerance=1e-10</em>, <em>unique_hash_tolerance=1e-10</em>, <em>zeta=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.DescriptorNew" title="Permalink to this definition">¶</a></dt>
-<dd><p>GAP options
-This subroutine parses the options given in the gap string, for each GAP.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>covariance_type</strong> (<a class="reference internal" href="#gap.descriptors.covariance_type" title="gap.descriptors.covariance_type"><em>covariance_type</em></a>) – Type of covariance function to use. Available: ARD_SE, DOT_PRODUCT, BOND_REAL_SPACE, PP (piecewise polynomial)</li>
-<li><strong>delta</strong> (<em>float</em>) – Set the standard deviation of the Gaussian process. Typically this would be set to the standard deviation (i.e. root mean square) of the function that is approximated with the Gaussian process.</li>
-<li><strong>add_species</strong> (<em>bool</em>) – Create species-specific descriptor, using the descriptor string as a template.</li>
-<li><strong>config_type_n_sparse</strong> (<em>str</em>) – Number of sparse points in each config type. Format: {type1:50:type2:100}</li>
-<li><strong>f0</strong> (<em>float</em>) – Set the mean of the Gaussian process. Defaults to 0.</li>
-<li><strong>mark_sparse_atoms</strong> (<em>bool</em>) – Reprints the original xyz file after sparsification process. sparse propery added, true for atoms associated with a sparse point.</li>
-<li><strong>n_sparse</strong> (<em>int</em>) – Number of sparse points to use in the sparsification of the Gaussian process</li>
-<li><strong>print_sparse_index</strong> (<em>str</em>) – If given, after determinining the sparse points, their 1-based indices are appended to this file</li>
-<li><strong>sparse_file</strong> (<em>str</em>) – Sparse points from a file. Integers, in single line.</li>
-<li><strong>sparse_method</strong> (<a class="reference internal" href="#gap.descriptors.sparse_method" title="gap.descriptors.sparse_method"><em>sparse_method</em></a>) – Sparsification method. RANDOM(default), PIVOT, CLUSTER, UNIFORM, KMEANS, COVARIANCE, NONE, FUZZY, FILE, INDEX_FILE, CUR_COVARIANCE, CUR_POINTS</li>
-<li><strong>theta_fac</strong> (<em>str</em>) – Set the width of Gaussians for the ARD_SE and PP kernel by multiplying the range of each descriptor by theta_fac. Can be a single number or different for each dimension. For multiple theta_fac separate each value by whitespaces.</li>
-<li><strong>theta_file</strong> (<em>str</em>) – Set the width of Gaussians for the ARD_SE kernel from a file. There should be as many real numbers as the number of dimensions, in a single line</li>
-<li><strong>theta_uniform</strong> (<em>float</em>) – Set the width of Gaussians for the ARD_SE and PP kernel, same in each dimension.</li>
-<li><strong>unique_descriptor_tolerance</strong> (<em>float</em>) – Descriptor tolerance when filtering out duplicate data points</li>
-<li><strong>unique_hash_tolerance</strong> (<em>float</em>) – Hash tolerance when filtering out duplicate data points</li>
-<li><strong>zeta</strong> (<em>float</em>) – Exponent of soap type dot product covariance kernel</li>
 </ul>
 </td>
 </tr>
@@ -898,7 +947,7 @@ This subroutine parses the options given in the gap string, for each GAP.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Adam Fekete
+        &copy; Copyright 
 
     </p>
   </div>

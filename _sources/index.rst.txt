@@ -1,8 +1,3 @@
-.. GAP Wrapper documentation master file, created by
-   sphinx-quickstart on Thu Jan 10 17:45:59 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 .. module:: quippy
 
 QUIP and quippy documentation
@@ -103,11 +98,12 @@ The following external packages can be called:
    :maxdepth: 4
    :caption: Contents:
 
-   introduction.rst
-   gap.rst
-   descriptors.rst
-   potentials.rst
-   tutorials.rst
+   introduction
+   install
+   gap
+   descriptors
+   potentials
+   tutorials/index
 
 
 Indices and tables

@@ -5,9 +5,6 @@ Overview
 --------
 
 
-Installation
-------------
-
 
 First exmaple
 -------------

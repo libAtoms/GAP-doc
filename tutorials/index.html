@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorials &mdash; GAP Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using Quippy to compute descriptors of atomic environments" href="quippy-descriptor-tutorial.html" />
+    <link rel="prev" title="Using Potentials" href="../potentials.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GAP Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#first-exmaple">First exmaple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#precompiled-containers">Precompiled Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#compilation-instructions">Compilation Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#quick-start">Quick start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#step-by-step">Step by step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#installing-the-jupyter-notebook">Installing the Jupyter notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#custom-settings">Custom settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#common-problems">Common Problems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#permission-errors-when-installing">Permission errors when installing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#installing-on-mac-os-x-with-macports">Installing on Mac OS X with macports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#runtimeerror-when-importing">RuntimeError when importing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#importerror-when-importing">ImportError when importing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#possible-problems-installing-atomeye-module">Possible problems installing atomeye module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#error-compiling-ipmodel-gap">Error compiling IPModel_GAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#warning-about-quippy-castep-when-importing-quippy">Warning about <code class="docutils literal notranslate"><span class="pre">quippy.castep</span></code> when importing quippy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#internal-compiler-error-with-ifort">Internal compiler error with <cite>ifort</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#linking-error-on-mac-os-x">Linking error on Mac OS X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html#segmentation-faults-with-openblas">Segmentation Faults with OpenBLAS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gap.html">Learning GAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gap.html#gaussian-approximation-potentials">Gaussian Approximation Potentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gap.html#additional-helper">Additional helper</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../descriptors.html">Descriptors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptors.html#module-gap.descriptors">List of descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../potentials.html">Using Potentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../potentials.html#quip">QUIP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../potentials.html#potentials-implemented-in-quip">Potentials implemented in <code class="docutils literal notranslate"><span class="pre">QUIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../potentials.html#performing-calculations">Performing calculations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../potentials.html#creating-a-potential">Creating a Potential</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../potentials.html#gap">GAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../potentials.html#xml-functions">XML functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quippy-descriptor-tutorial.html">Using Quippy to compute descriptors of atomic environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quippy-descriptor-tutorial.html#A-simple-descriptor:-pairwise-distances">A simple descriptor: pairwise distances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quippy-descriptor-tutorial.html#A-many-body-descriptor:-SOAP">A many-body descriptor: SOAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quippy-descriptor-tutorial.html#General_monomer-example:-benzene">General_monomer example: benzene</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GAP Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorials</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
+<p>The following tutorials are currently available:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quippy-descriptor-tutorial.html">Using Quippy to compute descriptors of atomic environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quippy-descriptor-tutorial.html#A-simple-descriptor:-pairwise-distances">A simple descriptor: pairwise distances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quippy-descriptor-tutorial.html#A-many-body-descriptor:-SOAP">A many-body descriptor: SOAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quippy-descriptor-tutorial.html#General_monomer-example:-benzene">General_monomer example: benzene</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quippy-descriptor-tutorial.html" class="btn btn-neutral float-right" title="Using Quippy to compute descriptors of atomic environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../potentials.html" class="btn btn-neutral float-left" title="Using Potentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
