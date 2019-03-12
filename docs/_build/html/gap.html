@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Learning GAP &mdash; GAP Wrapper 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Descriptors" href="descriptors.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> GAP Wrapper
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#first-exmaple">First exmaple</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Learning GAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gaussian-approximation-potentials-gap">Gaussian Approximation Potentials (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-helper">Additional helper</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="descriptors.html">Descriptors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptors.html#module-gap.descriptors">List of descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="potentials.html">Using Potentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html#quip">QUIP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#potentials-implemented-in-quip">Potentials implemented in <code class="docutils literal notranslate"><span class="pre">QUIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#performing-calculations">Performing calculations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#creating-a-potential">Creating a Potential</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html#gap">GAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#xml-functions">XML functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#descriptors">Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#learning-charges">Learning charges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#si-surface">Si surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#crack-propagation">Crack propagation</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GAP Wrapper</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Learning GAP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/gap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-gap"></span><div class="section" id="learning-gap">
+<h1>Learning GAP<a class="headerlink" href="#learning-gap" title="Permalink to this headline">¶</a></h1>
+<p>Python wrapper for the teach_sparse program</p>
+<div class="section" id="gaussian-approximation-potentials-gap">
+<h2>Gaussian Approximation Potentials (GAP)<a class="headerlink" href="#gaussian-approximation-potentials-gap" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gap.GAP">
+<em class="property">class </em><code class="descclassname">gap.</code><code class="descname">GAP</code><span class="sig-paren">(</span><em>gap</em>, <em>default_sigma</em>, <em>config_type_sigma=None</em>, <em>core_ip_args=None</em>, <em>core_param_file='quip_params.xml'</em>, <em>do_e0_avg=True</em>, <em>do_ip_timing=False</em>, <em>e0='0'</em>, <em>e0_offset=0.0</em>, <em>hessian_delta=1.0</em>, <em>sigma_parameter_name='sigma'</em>, <em>sigma_per_atom=True</em>, <em>sparse_jitter=1.0</em>, <em>sparse_use_actual_gpcov=False</em>, <em>template_file='template.xml'</em>, <em>verbosity=&lt;Verbose.Normal: 'NORMAL'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.GAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>GAP Wrapper
+This subroutine parses the main command line options.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>gap</strong> (<em>list of Descriptors</em>) – Initialisation string for GAPs</li>
+<li><strong>default_sigma</strong> (<em>float</em>) – Error in [energies forces virials hessians]</li>
+<li><strong>config_type_sigma</strong> (<em>str</em>) – What sigma values to choose for each type of data. Format:
+{type:energy:force:virial:hessian}</li>
+<li><strong>core_ip_args</strong> (<em>str</em>) – QUIP init string for a potential to subtract from data (and added back after prediction)</li>
+<li><strong>core_param_file</strong> (<em>str</em>) – QUIP XML file for a potential to subtract from data (and added back after prediction)</li>
+<li><strong>do_e0_avg</strong> (<em>bool</em>) – Method of calculating e0 if not explicitly specified. If true, computes the average atomic
+energy in input data. If false, sets e0 to the lowest atomic energy in the input data.</li>
+<li><strong>do_ip_timing</strong> (<em>bool</em>) – To enable or not timing of the interatomic potential.</li>
+<li><strong>e0</strong> (<em>str</em>) – Atomic energy value to be subtracted from energies before fitting (and added back on after
+prediction). Specifiy a single number (used for all species) or by species: {Ti:-150.0:O:-320}.
+energy = core + GAP + e0</li>
+<li><strong>e0_offset</strong> (<em>float</em>) – Offset of baseline. If zero, the offset is the average atomic energy of the input data or
+the e0 specified manually.</li>
+<li><strong>hessian_delta</strong> (<em>float</em>) – Delta to use in numerical differentiation when obtaining second derivative for the
+Hessian covariance</li>
+<li><strong>sigma_parameter_name</strong> (<em>str</em>) – Sigma parameters (error hyper) for a given configuration in the database. Overrides
+the command line sigmas. In the XYZ, it must be prepended by energy_, force_, virial_ or hessian_</li>
+<li><strong>sigma_per_atom</strong> (<em>bool</em>) – Interpretation of the energy and virial sigmas specified in &gt;&gt;default_sigma&lt;&lt; and
+&gt;&gt;config_type_sigma&lt;&lt;. If &gt;&gt;T&lt;&lt;, they are interpreted as per-atom errors, and the variance will be scaled
+according to the number of atoms in the configuration. If &gt;&gt;F&lt;&lt; they are treated as absolute errors and no
+scaling is performed. NOTE: sigmas specified on a per-configuration basis (see &gt;&gt;sigma_parameter_name&lt;&lt;)
+are always absolute.</li>
+<li><strong>sparse_jitter</strong> (<em>float</em>) – Intrisic error of atomic/bond energy, used to regularise the sparse covariance matrix</li>
+<li><strong>sparse_use_actual_gpcov</strong> (<em>bool</em>) – Use actual GP covariance for sparsification methods</li>
+<li><strong>template_file</strong> (<em>str</em>) – Template XYZ file for initialising object</li>
+<li><strong>verbosity</strong> (<a class="reference internal" href="#gap.Verbose" title="gap.Verbose"><em>Verbose</em></a>) – Verbosity control.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="gap.GAP.teach">
+<code class="descname">teach</code><span class="sig-paren">(</span><em>at_file</em>, <em>gp_file='gp_new.xml'</em>, <em>config_type_parameter_name='config_type'</em>, <em>energy_parameter_name='energy'</em>, <em>force_parameter_name='force'</em>, <em>hessian_parameter_name='hessian'</em>, <em>virial_parameter_name='virial'</em>, <em>do_copy_at_file=True</em>, <em>sparse_separate_file=True</em>, <em>rnd_seed=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.GAP.teach" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>at_file</strong> (<em>str</em>) – XYZ file with teaching configurations</li>
+<li><strong>gp_file</strong> (<em>str</em>) – Output XML file</li>
+<li><strong>config_type_parameter_name</strong> (<em>str</em>) – Identifier of property determining the type of input data in the at_file</li>
+<li><strong>do_copy_at_file</strong> (<em>bool</em>) – Do copy the at_file into the GAP XML file (should be set to False for NetCDF input).</li>
+<li><strong>energy_parameter_name</strong> (<em>str</em>) – Name of energy property in the at_file that describes the data</li>
+<li><strong>force_parameter_name</strong> (<em>str</em>) – Name of force property in the at_file that describes the data</li>
+<li><strong>hessian_parameter_name</strong> (<em>str</em>) – Name of hessian property in the at_file that describes the data</li>
+<li><strong>rnd_seed</strong> (<em>int</em>) – Random seed.</li>
+<li><strong>sparse_separate_file</strong> (<em>bool</em>) – Save sparse coordinates data in separate file</li>
+<li><strong>virial_parameter_name</strong> (<em>str</em>) – Name of virial property in the at_file that describes the data</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="additional-helper">
+<h2>Additional helper<a class="headerlink" href="#additional-helper" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gap.Verbose">
+<em class="property">class </em><code class="descclassname">gap.</code><code class="descname">Verbose</code><a class="headerlink" href="#gap.Verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity control. Options:</p>
+<ul class="simple">
+<li><strong>NORMAL</strong>,</li>
+<li><strong>VERBOSE</strong>,</li>
+<li><strong>NERD</strong>,</li>
+<li><strong>ANAL</strong>.</li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="descriptors.html" class="btn btn-neutral float-right" title="Descriptors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Adam Fekete
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>QUIP and quippy documentation &mdash; GAP Wrapper 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="introduction.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> GAP Wrapper
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#first-exmaple">First exmaple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gap.html">Learning GAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#gaussian-approximation-potentials-gap">Gaussian Approximation Potentials (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#additional-helper">Additional helper</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="descriptors.html">Descriptors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptors.html#module-gap.descriptors">List of descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="potentials.html">Using Potentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html#quip">QUIP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#potentials-implemented-in-quip">Potentials implemented in <code class="docutils literal notranslate"><span class="pre">QUIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#performing-calculations">Performing calculations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#creating-a-potential">Creating a Potential</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html#gap">GAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#xml-functions">XML functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#descriptors">Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#learning-charges">Learning charges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#si-surface">Si surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#crack-propagation">Crack propagation</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">GAP Wrapper</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>QUIP and quippy documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-quippy"></span><div class="section" id="quip-and-quippy-documentation">
+<h1>QUIP and quippy documentation<a class="headerlink" href="#quip-and-quippy-documentation" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">QUIP</span></code> package (<a class="reference external" href="https://github.com/libAtoms/QUIP">GitHub</a>) is a
+collection of software tools to carry out molecular dynamics
+simulations. It implements a variety of interatomic potentials and
+tight binding quantum mechanics, and is also able to call external
+packages, and serve as plugins to other software such as <a class="reference external" href="http://lammps.sandia.gov">LAMMPS</a>, <a class="reference external" href="http://www.cp2k.org">CP2K</a> and also
+the python framework <a class="reference external" href="https://wiki.fysik.dtu.dk/ase">ASE</a>.  Various
+hybrid combinations are also supported in the style of QM/MM, with a
+particular focus on materials systems such as metals and
+semiconductors.</p>
+<p><code class="docutils literal notranslate"><span class="pre">quippy</span></code> is a Python interface to <code class="docutils literal notranslate"><span class="pre">QUIP</span></code> that provides deep access to
+most of the Fortran types and routines. The quippy interface is principally
+maintained by <a class="reference external" href="http://www.warwick.ac.uk/jrkermode">James Kermode</a>.</p>
+<dl class="docutils">
+<dt>Long term support of the package is ensured by:</dt>
+<dd><ul class="first last simple">
+<li>Noam Bernstein (Naval Research Laboratory)</li>
+<li>Gabor Csanyi (University of Cambridge)</li>
+<li>James Kermode (University of Warwick)</li>
+</ul>
+</dd>
+</dl>
+<p>Portions of this code were written by: Albert Bartok-Partay, Livia
+Bartok-Partay, Federico Bianchini, Anke Butenuth, Marco Caccin,
+Silvia Cereda, Gabor Csanyi, Alessio Comisso, Tom Daff, ST John,
+Chiara Gattinoni, Gianpietro Moras, James Kermode, Letif Mones,
+Alan Nichol, David Packwood, Lars Pastewka, Giovanni Peralta, Ivan
+Solt, Oliver Strickson, Wojciech Szlachta, Csilla Varnai, Steven
+Winfield.</p>
+<p>Copyright 2006-2016.</p>
+<p>Most of the publicly available version is released under the GNU
+General Public license, version 2, with some portions in the public
+domain.</p>
+<div class="section" id="overview-of-libatoms-and-quip">
+<h2>Overview of <code class="docutils literal notranslate"><span class="pre">libAtoms</span></code> and <code class="docutils literal notranslate"><span class="pre">QUIP</span></code><a class="headerlink" href="#overview-of-libatoms-and-quip" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The <a class="reference external" href="http://www.libatoms.org">libAtoms</a> package is a software
+library written in Fortran 95 for the purposes of carrying out
+molecular dynamics simulations.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">QUIP</span></code> (<strong>QU</strong>antum mechanics and <strong>I</strong>nteratomic
+<strong>P</strong>otentials) package, built on top of <code class="docutils literal notranslate"><span class="pre">libAtoms</span></code>, implements a
+wide variety of interatomic potentials and tight binding quantum
+mechanics, and is also able to call external packages.</li>
+<li>Various hybrid combinations are also supported in the style of
+QM/MM, including <cite>Learn on the Fly</cite> scheme <a class="reference internal" href="#lotf" id="id1">[LOTF]</a></li>
+<li><a class="reference external" href="http://www.jrkermode.co.uk/quippy">quippy</a> is a Python interface
+to libAtoms and QUIP.</li>
+</ul>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>The following interatomic potentials are presently coded or linked in QUIP:</p>
+<ul class="simple">
+<li>EAM (fcc metals)</li>
+<li>Fanourgakis-Xantheas (water)</li>
+<li>Finnis-Sinclair (bcc metals)</li>
+<li>Flikkema-Bromley</li>
+<li>GAP (Gaussian Approximation Potentials: general many-body)</li>
+<li>Guggenheim-!McGlashan</li>
+<li>Brenner (carbon)</li>
+<li>OpenKIM (general interface)</li>
+<li>Lennard-Jones</li>
+<li>Morse</li>
+<li>Partridge-Schwenke (water monomer)</li>
+<li>Stillinger-Weber (carbon, silicon, germanium)</li>
+<li>SiMEAM (silicon)</li>
+<li>Sutton-Chen</li>
+<li>Tangney-Scandolo (silica, titania etc)</li>
+<li>Tersoff (silicon, carbon)</li>
+</ul>
+<p>The following tight-binding functional forms and parametrisations are implemented:</p>
+<ul class="simple">
+<li>Bowler</li>
+<li>DFTB</li>
+<li>GSP</li>
+<li>NRL-TB</li>
+</ul>
+<p>The following external packages can be called:</p>
+<ul class="simple">
+<li>CASTEP</li>
+<li>VASP</li>
+<li>CP2K</li>
+<li>ASAP</li>
+<li>ASE (recent version, 3.11+, recommended)</li>
+<li>Molpro</li>
+</ul>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#first-exmaple">First exmaple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gap.html">Learning GAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#gaussian-approximation-potentials-gap">Gaussian Approximation Potentials (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#additional-helper">Additional helper</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="descriptors.html">Descriptors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptors.html#module-gap.descriptors">List of descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="potentials.html">Using Potentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html#quip">QUIP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#potentials-implemented-in-quip">Potentials implemented in <code class="docutils literal notranslate"><span class="pre">QUIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#performing-calculations">Performing calculations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#creating-a-potential">Creating a Potential</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html#gap">GAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#xml-functions">XML functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#descriptors">Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#learning-charges">Learning charges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#si-surface">Si surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#crack-propagation">Crack propagation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils citation" frame="void" id="lotf" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[LOTF]</a></td><td>Csányi, G., Albaret, T., Payne, M., &amp; De Vita,
+A. ‘Learn on the Fly’: A Hybrid Classical and Quantum-Mechanical
+Molecular Dynamics Simulation. Physical Review Letters,
+93(17), 175503. (2004) <a class="reference external" href="http://prl.aps.org/abstract/PRL/v93/i17/e175503">http://prl.aps.org/abstract/PRL/v93/i17/e175503</a>&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Adam Fekete
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

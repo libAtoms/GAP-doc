@@ -1,0 +1,938 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Descriptors &mdash; GAP Wrapper 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using Potentials" href="potentials.html" />
+    <link rel="prev" title="Learning GAP" href="gap.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> GAP Wrapper
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#first-exmaple">First exmaple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gap.html">Learning GAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#gaussian-approximation-potentials-gap">Gaussian Approximation Potentials (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#additional-helper">Additional helper</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Descriptors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-gap.descriptors">List of descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="potentials.html">Using Potentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html#quip">QUIP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#potentials-implemented-in-quip">Potentials implemented in <code class="docutils literal notranslate"><span class="pre">QUIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#performing-calculations">Performing calculations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#creating-a-potential">Creating a Potential</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html#gap">GAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="potentials.html#xml-functions">XML functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#descriptors">Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#learning-charges">Learning charges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#si-surface">Si surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#crack-propagation">Crack propagation</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GAP Wrapper</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Descriptors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/descriptors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="descriptors">
+<h1>Descriptors<a class="headerlink" href="#descriptors" title="Permalink to this headline">¶</a></h1>
+<p>Descriptors for atomic environments</p>
+<div class="section" id="module-gap.descriptors">
+<span id="list-of-descriptors"></span><h2>List of descriptors<a class="headerlink" href="#module-gap.descriptors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gap.descriptors.A2_dimer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">A2_dimer</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>monomer_cutoff=1.5</em>, <em>atomic_number=1</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.A2_dimer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for A2_dimer-type descriptors</li>
+<li><strong>monomer_cutoff</strong> (<em>float</em>) – Monomer cutoff for A2_dimer-type descriptors</li>
+<li><strong>atomic_number</strong> (<em>int</em>) – Atomic number in A2_dimer-type descriptors</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.AB_dimer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">AB_dimer</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>monomer_cutoff=1.5</em>, <em>atomic_number1=1</em>, <em>atomic_number2=9</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.AB_dimer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for AB_dimer-type descriptors</li>
+<li><strong>monomer_cutoff</strong> (<em>float</em>) – Monomer cutoff for AB_dimer-type descriptors</li>
+<li><strong>atomic_number1</strong> (<em>int</em>) – Atomic number of atom 1 in AB_dimer-type descriptors</li>
+<li><strong>atomic_number2</strong> (<em>int</em>) – Atomic number of atom 2 in AB_dimer-type descriptors</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.AN_monomer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">AN_monomer</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>atomic_number=1</em>, <em>N=4</em>, <em>do_atomic=True</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.AN_monomer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for AN_monomer-type descriptors</li>
+<li><strong>atomic_number</strong> (<em>int</em>) – Atomic number in AN_monomer-type descriptors</li>
+<li><strong>N</strong> (<em>int</em>) – Number of atoms in cluster</li>
+<li><strong>do_atomic</strong> (<em>bool</em>) – Descriptors are cluster based or atom-based</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.DescriptorNew">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">DescriptorNew</code><span class="sig-paren">(</span><em>covariance_type=None</em>, <em>delta=None</em>, <em>Name='Default'</em>, <em>add_species=False</em>, <em>config_type_n_sparse=None</em>, <em>f0=0.0</em>, <em>mark_sparse_atoms=False</em>, <em>n_sparse=0</em>, <em>print_sparse_index=None</em>, <em>sparse_file=None</em>, <em>sparse_method=&lt;sparse_method.RANDOM: 'RANDOM'&gt;</em>, <em>theta_fac=1.0</em>, <em>theta_file=None</em>, <em>theta_uniform=0.0</em>, <em>unique_descriptor_tolerance=1e-10</em>, <em>unique_hash_tolerance=1e-10</em>, <em>zeta=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.DescriptorNew" title="Permalink to this definition">¶</a></dt>
+<dd><p>GAP options
+This subroutine parses the options given in the gap string, for each GAP.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>covariance_type</strong> (<a class="reference internal" href="#gap.descriptors.covariance_type" title="gap.descriptors.covariance_type"><em>covariance_type</em></a>) – Type of covariance function to use. Available: ARD_SE, DOT_PRODUCT, BOND_REAL_SPACE, PP (piecewise polynomial)</li>
+<li><strong>delta</strong> (<em>float</em>) – Set the standard deviation of the Gaussian process. Typically this would be set to the standard deviation (i.e. root mean square) of the function that is approximated with the Gaussian process.</li>
+<li><strong>add_species</strong> (<em>bool</em>) – Create species-specific descriptor, using the descriptor string as a template.</li>
+<li><strong>config_type_n_sparse</strong> (<em>str</em>) – Number of sparse points in each config type. Format: {type1:50:type2:100}</li>
+<li><strong>f0</strong> (<em>float</em>) – Set the mean of the Gaussian process. Defaults to 0.</li>
+<li><strong>mark_sparse_atoms</strong> (<em>bool</em>) – Reprints the original xyz file after sparsification process. sparse propery added, true for atoms associated with a sparse point.</li>
+<li><strong>n_sparse</strong> (<em>int</em>) – Number of sparse points to use in the sparsification of the Gaussian process</li>
+<li><strong>print_sparse_index</strong> (<em>str</em>) – If given, after determinining the sparse points, their 1-based indices are appended to this file</li>
+<li><strong>sparse_file</strong> (<em>str</em>) – Sparse points from a file. Integers, in single line.</li>
+<li><strong>sparse_method</strong> (<a class="reference internal" href="#gap.descriptors.sparse_method" title="gap.descriptors.sparse_method"><em>sparse_method</em></a>) – Sparsification method. RANDOM(default), PIVOT, CLUSTER, UNIFORM, KMEANS, COVARIANCE, NONE, FUZZY, FILE, INDEX_FILE, CUR_COVARIANCE, CUR_POINTS</li>
+<li><strong>theta_fac</strong> (<em>str</em>) – Set the width of Gaussians for the ARD_SE and PP kernel by multiplying the range of each descriptor by theta_fac. Can be a single number or different for each dimension. For multiple theta_fac separate each value by whitespaces.</li>
+<li><strong>theta_file</strong> (<em>str</em>) – Set the width of Gaussians for the ARD_SE kernel from a file. There should be as many real numbers as the number of dimensions, in a single line</li>
+<li><strong>theta_uniform</strong> (<em>float</em>) – Set the width of Gaussians for the ARD_SE and PP kernel, same in each dimension.</li>
+<li><strong>unique_descriptor_tolerance</strong> (<em>float</em>) – Descriptor tolerance when filtering out duplicate data points</li>
+<li><strong>unique_hash_tolerance</strong> (<em>float</em>) – Hash tolerance when filtering out duplicate data points</li>
+<li><strong>zeta</strong> (<em>float</em>) – Exponent of soap type dot product covariance kernel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="exception">
+<dt id="gap.descriptors.MissingParameter">
+<em class="property">exception </em><code class="descclassname">gap.descriptors.</code><code class="descname">MissingParameter</code><span class="sig-paren">(</span><em>parameter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.MissingParameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.alex">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">alex</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>Z=0</em>, <em>power_min=5</em>, <em>power_max=10</em>, <em>n_species=1</em>, <em>species_Z=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.alex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for alex-type descriptors</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>power_min</strong> (<em>int</em>) – Minimum power of radial basis for the descriptor</li>
+<li><strong>power_max</strong> (<em>int</em>) – Maximum power of the radial basis for the descriptor</li>
+<li><strong>n_species</strong> (<em>int</em>) – Number of species for the descriptor</li>
+<li><strong>species_Z</strong> – Atomic number of species</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.angle_3b">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">angle_3b</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>Z=0</em>, <em>Z1=0</em>, <em>Z2=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.angle_3b" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for angle_3b-type descriptors</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>Z1</strong> (<em>int</em>) – Atomic number of neighbour #1</li>
+<li><strong>Z2</strong> (<em>int</em>) – Atomic number of neighbour #2</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.as_distance_2b">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">as_distance_2b</code><span class="sig-paren">(</span><em>min_cutoff=0.0</em>, <em>max_cutoff=None</em>, <em>as_cutoff=None</em>, <em>overlap_alpha=0.5</em>, <em>min_transition_width=0.5</em>, <em>max_transition_width=0.5</em>, <em>as_transition_width=0.1</em>, <em>coordination_cutoff=None</em>, <em>coordination_transition_width=0.5</em>, <em>Z1=0</em>, <em>Z2=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.as_distance_2b" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_cutoff</strong> (<em>float</em>) – Lower cutoff for as_distance_2b-type descriptors</li>
+<li><strong>max_cutoff</strong> – Higher cutoff for as_distance_2b-type descriptors</li>
+<li><strong>as_cutoff</strong> – Cutoff of asymmetricity</li>
+<li><strong>overlap_alpha</strong> (<em>float</em>) – Cutoff of asymmetricity</li>
+<li><strong>min_transition_width</strong> (<em>float</em>) – Transition width of lower cutoff for as_distance_2b-type descriptors</li>
+<li><strong>max_transition_width</strong> (<em>float</em>) – Transition width of higher cutoff for as_distance_2b-type descriptors</li>
+<li><strong>as_transition_width</strong> (<em>float</em>) – Transition width of asymmetricity cutoff for as_distance_2b-type descriptors</li>
+<li><strong>coordination_cutoff</strong> – Cutoff for coordination function in as_distance_2b-type descriptors</li>
+<li><strong>coordination_transition_width</strong> (<em>float</em>) – Transition width for as_distance_2b-type descriptors</li>
+<li><strong>Z1</strong> (<em>int</em>) – Atom type #1 in bond</li>
+<li><strong>Z2</strong> (<em>int</em>) – Atom type #2 in bond</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.atom_real_space">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">atom_real_space</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>cutoff_transition_width=0.0</em>, <em>l_max=0</em>, <em>alpha=1.0</em>, <em>zeta=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.atom_real_space" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Space cutoff for atom_real_space-type descriptors</li>
+<li><strong>cutoff_transition_width</strong> (<em>float</em>) – Space transition width for atom_real_space-type descriptors</li>
+<li><strong>l_max</strong> (<em>int</em>) – Cutoff for spherical harmonics expansion</li>
+<li><strong>alpha</strong> (<em>float</em>) – Width of atomic Gaussians</li>
+<li><strong>zeta</strong> (<em>float</em>) – Exponent of covariance function</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.behler">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">behler</code><span class="sig-paren">(</span><em>behler_cutoff=2.75</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.behler" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>behler_cutoff</strong> (<em>float</em>) – Cutoff for Behler-type descriptors</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.bispectrum_so3">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">bispectrum_so3</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>min_cutoff=0.0</em>, <em>l_max=4</em>, <em>n_max=4</em>, <em>Z=0</em>, <em>n_species=1</em>, <em>species_Z=None</em>, <em>w=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.bispectrum_so3" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for bispectrum_so3-type descriptors</li>
+<li><strong>min_cutoff</strong> (<em>float</em>) – Cutoff for minimal distances in bispectrum_so3-type descriptors</li>
+<li><strong>l_max</strong> (<em>int</em>) – L_max for bispectrum_so3-type descriptors</li>
+<li><strong>n_max</strong> (<em>int</em>) – N_max for bispectrum_so3-type descriptors</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>n_species</strong> (<em>int</em>) – Number of species for the descriptor</li>
+<li><strong>species_Z</strong> (<em>int __OR__ ?</em><em>)</em>) – Atomic number of species</li>
+<li><strong>w</strong> (<em>float __OR__ ?</em><em>)</em>) – Weight associated to each atomic type</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.bispectrum_so4">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">bispectrum_so4</code><a class="headerlink" href="#gap.descriptors.bispectrum_so4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Args:</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.bond_real_space">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">bond_real_space</code><span class="sig-paren">(</span><em>bond_cutoff=0.0</em>, <em>bond_transition_width=0.0</em>, <em>cutoff=0.0</em>, <em>transition_width=0.0</em>, <em>atom_sigma=0.0</em>, <em>max_neighbours=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.bond_real_space" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bond_cutoff</strong> (<em>float</em>) – Bond cutoff for bond_real_space-type descriptors</li>
+<li><strong>bond_transition_width</strong> (<em>float</em>) – Bond transition width for bond_real_space-type descriptors</li>
+<li><strong>cutoff</strong> (<em>float</em>) – Space cutoff for bond_real_space-type descriptors</li>
+<li><strong>transition_width</strong> (<em>float</em>) – Space transition width for bond_real_space-type descriptors</li>
+<li><strong>atom_sigma</strong> (<em>float</em>) – Atom sigma for bond_real_space-type descriptors</li>
+<li><strong>max_neighbours</strong> (<em>int</em>) – Maximum number of neighbours</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.co_angle_3b">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">co_angle_3b</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>coordination_cutoff=0.0</em>, <em>coordination_transition_width=0.0</em>, <em>Z=0</em>, <em>Z1=0</em>, <em>Z2=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.co_angle_3b" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for co_angle_3b-type descriptors</li>
+<li><strong>coordination_cutoff</strong> (<em>float</em>) – Cutoff for coordination function in co_angle_3b-type descriptors</li>
+<li><strong>coordination_transition_width</strong> (<em>float</em>) – Transition width for co_angle_3b-type descriptors</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>Z1</strong> (<em>int</em>) – Atomic number of neighbour #1</li>
+<li><strong>Z2</strong> (<em>int</em>) – Atomic number of neighbour #2</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.co_distance_2b">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">co_distance_2b</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>transition_width=0.5</em>, <em>coordination_cutoff=0.0</em>, <em>coordination_transition_width=0.0</em>, <em>Z1=0</em>, <em>Z2=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.co_distance_2b" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for co_distance_2b-type descriptors</li>
+<li><strong>transition_width</strong> (<em>float</em>) – Transition width of cutoff for co_distance_2b-type descriptors</li>
+<li><strong>coordination_cutoff</strong> (<em>float</em>) – Cutoff for coordination function in co_distance_2b-type descriptors</li>
+<li><strong>coordination_transition_width</strong> (<em>float</em>) – Transition width for co_distance_2b-type descriptors</li>
+<li><strong>Z1</strong> (<em>int</em>) – Atom type #1 in bond</li>
+<li><strong>Z2</strong> (<em>int</em>) – Atom type #2 in bond</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.com_dimer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">com_dimer</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>monomer_one_cutoff=0.0</em>, <em>monomer_two_cutoff=0.0</em>, <em>cutoff_transition_width=0.5</em>, <em>atom_ordercheck=True</em>, <em>strict=True</em>, <em>mpifind=False</em>, <em>signature_one=None</em>, <em>signature_two=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.com_dimer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff(intermolecular) for com_dimer-type descriptors</li>
+<li><strong>monomer_one_cutoff</strong> (<em>float</em>) – Cutoff(mono1) for com_dimer-type descriptors</li>
+<li><strong>monomer_two_cutoff</strong> (<em>float</em>) – Cutoff(mono2) for com_dimer-type descriptors</li>
+<li><strong>cutoff_transition_width</strong> (<em>float</em>) – Width of smooth cutoff region for com_dimer-type descriptors</li>
+<li><strong>atom_ordercheck</strong> (<em>bool</em>) – T: find molecules. F: go by order of atoms</li>
+<li><strong>strict</strong> (<em>bool</em>) – Raise error if not all atoms assigned to monomer or if no monomer pairs found</li>
+<li><strong>mpifind</strong> (<em>bool</em>) – Use find_monomer_pairs_MPI</li>
+<li><strong>signature_one</strong> – Atomic numbers of monomer one, format {Z1 Z2 Z3 …}</li>
+<li><strong>signature_two</strong> – Atomic numbers of monomer two, format {Z1 Z2 Z3 …}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.coordination">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">coordination</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>transition_width=0.2</em>, <em>Z=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.coordination" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for coordination-type descriptors</li>
+<li><strong>transition_width</strong> (<em>float</em>) – Width of transition region from 1 to 0</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.cosnx">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">cosnx</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>min_cutoff=0.0</em>, <em>l_max=4</em>, <em>n_max=4</em>, <em>Z=0</em>, <em>n_species=1</em>, <em>species_Z=None</em>, <em>w=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.cosnx" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for cosnx-type descriptors</li>
+<li><strong>min_cutoff</strong> (<em>float</em>) – Cutoff for minimal distances in cosnx-type descriptors</li>
+<li><strong>l_max</strong> (<em>int</em>) – L_max for cosnx-type descriptors</li>
+<li><strong>n_max</strong> (<em>int</em>) – N_max for cosnx-type descriptors</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>n_species</strong> (<em>int</em>) – Number of species for the descriptor</li>
+<li><strong>species_Z</strong> (<em>int __OR__ ?</em><em>)</em>) – Atomic number of species</li>
+<li><strong>w</strong> (<em>float __OR__ ?</em><em>)</em>) – Weight associated to each atomic type</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.covariance_type">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">covariance_type</code><a class="headerlink" href="#gap.descriptors.covariance_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of covariance function to use. Available:</p>
+<ul class="simple">
+<li><strong>ARD_SE</strong>,</li>
+<li><strong>DOT_PRODUCT</strong>,</li>
+<li><strong>BOND_REAL_SPACE</strong>,</li>
+<li><strong>PP</strong>: piecewise polynomial</li>
+</ul>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.distance_2b">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">distance_2b</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>cutoff_transition_width=0.5</em>, <em>Z1=0</em>, <em>Z2=0</em>, <em>resid_name=''</em>, <em>only_intra=False</em>, <em>only_inter=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.distance_2b" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for distance_2b-type descriptors</li>
+<li><strong>cutoff_transition_width</strong> (<em>float</em>) – Transition width of cutoff for distance_2b-type descriptors</li>
+<li><strong>Z1</strong> (<em>int</em>) – Atom type #1 in bond</li>
+<li><strong>Z2</strong> (<em>int</em>) – Atom type #2 in bond</li>
+<li><strong>resid_name</strong> (<em>str</em>) – Name of an integer property in the atoms object giving the residue id of the molecule to which the atom belongs.</li>
+<li><strong>only_intra</strong> (<em>bool</em>) – Only calculate INTRAmolecular pairs with equal residue ids (bonds)</li>
+<li><strong>only_inter</strong> (<em>bool</em>) – Only apply to INTERmolecular pairs with different residue ids (non-bonded)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.distance_Nb">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">distance_Nb</code><span class="sig-paren">(</span><em>order</em>, <em>cutoff</em>, <em>cutoff_transition_width=0.5</em>, <em>compact_clusters=False</em>, <em>Z=None</em>, <em>atom_mask_name=None</em>, <em>xml_version=1423143769</em>, <em>do_transfer=False</em>, <em>transfer_factor=5.0</em>, <em>transfer_width=1.0</em>, <em>transfer_r0=3.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.distance_Nb" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> – Cutoff for distance_Nb-type descriptors</li>
+<li><strong>cutoff_transition_width</strong> (<em>float</em>) – Transition width of cutoff for distance_Nb-type descriptors</li>
+<li><strong>order</strong> – Many-body order, in terms of number of neighbours</li>
+<li><strong>compact_clusters</strong> (<em>bool</em>) – If true, generate clusters where the atoms have at least one connection to the central atom. If false, only clusters where all atoms are connected are generated.</li>
+<li><strong>Z</strong> – Atomic type of neighbours</li>
+<li><strong>atom_mask_name=None</strong> – Name of a logical property in the atoms object. For atoms where this property is true descriptors are calculated.</li>
+<li><strong>xml_version</strong> (<em>int</em>) – Version of GAP the XML potential file was created</li>
+<li><strong>do_transfer</strong> (<em>bool</em>) – Enable transfer function</li>
+<li><strong>transfer_factor</strong> (<em>float</em>) – Transfer function: stretch factor</li>
+<li><strong>transfer_width</strong> (<em>float</em>) – Transfer function: transition width</li>
+<li><strong>transfer_r0</strong> (<em>float</em>) – Transfer function: transition distance</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.fourier_so4">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">fourier_so4</code><span class="sig-paren">(</span><em>cutoff=2.75</em>, <em>z0_ratio=0.0</em>, <em>j_max=4</em>, <em>Z=0</em>, <em>n_species=1</em>, <em>species_Z=None</em>, <em>w=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.fourier_so4" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for SO4 bispectrum</li>
+<li><strong>z0_ratio</strong> (<em>float</em>) – Ratio of radius of 4D projection sphere times PI and the cutoff.</li>
+<li><strong>j_max</strong> (<em>int</em>) – Max of expansion of bispectrum, i.e. resulution</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>n_species</strong> (<em>int</em>) – Number of species for the descriptor</li>
+<li><strong>species_Z</strong> (<em>int __OR__ ?</em>) – Atomic number of species</li>
+<li><strong>w</strong> (<em>float __OR__ ?</em>) – Weight associated to each atomic type</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.general_dimer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">general_dimer</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>monomer_one_cutoff=0.0</em>, <em>monomer_two_cutoff=0.0</em>, <em>cutoff_transition_width=0.5</em>, <em>internal_swaps_only=True</em>, <em>atom_ordercheck=True</em>, <em>double_count=False</em>, <em>strict=True</em>, <em>use_com=False</em>, <em>mpifind=False</em>, <em>signature_one=None</em>, <em>signature_two=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.general_dimer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff(intermolecular) for general_dimer-type descriptors</li>
+<li><strong>monomer_one_cutoff</strong> (<em>float</em>) – Cutoff(mono1) for general_dimer-type descriptors</li>
+<li><strong>monomer_two_cutoff</strong> (<em>float</em>) – Cutoff(mono2) for general_dimer-type descriptors</li>
+<li><strong>cutoff_transition_width</strong> (<em>float</em>) – Width of smooth cutoff region for general_dimer-type descriptors</li>
+<li><strong>internal_swaps_only</strong> (<em>bool</em>) – F: energies will be symmetrised over swaps of nuclei between monomers</li>
+<li><strong>atom_ordercheck</strong> (<em>bool</em>) – T: find molecules. F: go by order of atoms</li>
+<li><strong>double_count</strong> (<em>bool</em>) – T: double count when constructing the dimers, for compatibility with water dimer descriptor, default False</li>
+<li><strong>strict</strong> (<em>bool</em>) – Raise error if not all atoms assigned to monomer or if no monomer pairs found</li>
+<li><strong>use_com</strong> (<em>bool</em>) – Use COM instead of COG</li>
+<li><strong>mpifind</strong> (<em>bool</em>) – Use find_monomer_pairs_MPI</li>
+<li><strong>signature_one</strong> – Atomic numbers of monomer one, format {Z1 Z2 Z3 …}</li>
+<li><strong>signature_two</strong> – Atomic numbers of monomer two, format {Z1 Z2 Z3 …}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.general_monomer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">general_monomer</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>signature=None</em>, <em>atom_ordercheck=True</em>, <em>strict=True</em>, <em>power=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.general_monomer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for general_monomer-type descriptors</li>
+<li><strong>signature</strong> – Atomic numbers of monomer one, format {Z1 Z2 Z3 …}</li>
+<li><strong>atom_ordercheck</strong> (<em>bool</em>) – T: find molecules. F: go by order of atoms</li>
+<li><strong>strict</strong> (<em>bool</em>) – Raise error if not all atoms assigned to monomer</li>
+<li><strong>power</strong> (<em>float</em>) – Power of distances to be used in the kernel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.general_trimer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">general_trimer</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>monomer_one_cutoff=0.0</em>, <em>monomer_two_cutoff=0.0</em>, <em>monomer_three_cutoff=0.0</em>, <em>cutoff_transition_width=0.5</em>, <em>internal_swaps_only=True</em>, <em>atom_ordercheck=True</em>, <em>strict=True</em>, <em>use_com=False</em>, <em>mpifind=False</em>, <em>signature_one=None</em>, <em>signature_two=None</em>, <em>signature_three=None</em>, <em>power=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.general_trimer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff(intermolecular) for general_trimer-type descriptors</li>
+<li><strong>monomer_one_cutoff</strong> (<em>float</em>) – Cutoff(mono1) for general_trimer-type descriptors</li>
+<li><strong>monomer_two_cutoff</strong> (<em>float</em>) – Cutoff(mono2) for general_trimer-type descriptors</li>
+<li><strong>monomer_three_cutoff</strong> (<em>float</em>) – Cutoff(mono3) for general_trimer-type descriptors</li>
+<li><strong>cutoff_transition_width</strong> (<em>float</em>) – Width of smooth cutoff region for general_trimer-type descriptors</li>
+<li><strong>internal_swaps_only</strong> (<em>bool</em>) – F: energies will be symmetrised over swaps of nuclei between monomers</li>
+<li><strong>atom_ordercheck</strong> (<em>bool</em>) – T: find molecules. F: go by order of atoms</li>
+<li><strong>strict</strong> (<em>bool</em>) – Raise error if not all atoms assigned to monomer or if no monomer pairs found</li>
+<li><strong>use_com</strong> (<em>bool</em>) – Use COM instead of COG</li>
+<li><strong>mpifind</strong> (<em>bool</em>) – Use find_monomer_triplets_MPI</li>
+<li><strong>signature_one</strong> – Atomic numbers of monomer one, format {Z1 Z2 Z3 …}</li>
+<li><strong>signature_two</strong> – Atomic numbers of monomer two, format {Z1 Z2 Z3 …}</li>
+<li><strong>signature_three</strong> – Atomic numbers of monomer three, format {Z1 Z2 Z3 …}</li>
+<li><strong>power</strong> (<em>float</em>) – Power of distances to be used in the kernel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.molecule_lo_d">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">molecule_lo_d</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>atoms_template_string=''</em>, <em>neighbour_graph_depth=2</em>, <em>signature=''</em>, <em>symmetry_property_name='symm'</em>, <em>append_file=''</em>, <em>atom_ordercheck=True</em>, <em>desctype=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.molecule_lo_d" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for molecule_lo_d-type descriptors</li>
+<li><strong>atoms_template_string</strong> – Atoms object which serves as a template - written to a string</li>
+<li><strong>neighbour_graph_depth</strong> (<em>int</em>) – Ignore distances between atoms separated by more than this number of bonds</li>
+<li><strong>signature</strong> (<em>str</em>) – Atomic numbers of monomer one, format {Z1 Z2 Z3 …}</li>
+<li><strong>symmetry_property_name</strong> (<em>str</em>) – Integer arrays specifying symmetries - see header of make_permutations_v2.f95 for format</li>
+<li><strong>append_file</strong> (<em>str</em>) – Pairs of atoms for which we want the distance to be additionally included in the descriptor</li>
+<li><strong>atom_ordercheck</strong> (<em>bool</em>) – T: basic check that atoms in same order as in template F: assume all xyz frames have atoms in same order</li>
+<li><strong>desctype</strong> (<em>int</em>) – 0: distance matrix, 1: inverse distance matrix, 2: Coulomb matrix, 3: exponential</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.power_so3">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">power_so3</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>min_cutoff=0.0</em>, <em>l_max=4</em>, <em>n_max=4</em>, <em>Z=0</em>, <em>n_species=1</em>, <em>species_Z=None</em>, <em>w=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.power_so3" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for power_so3-type descriptors</li>
+<li><strong>min_cutoff</strong> (<em>float</em>) – Cutoff for minimal distances in power_so3-type descriptors</li>
+<li><strong>l_max</strong> (<em>int</em>) – L_max for power_so3-type descriptors</li>
+<li><strong>n_max</strong> (<em>int</em>) – N_max for power_so3-type descriptors</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>n_species</strong> (<em>int</em>) – Number of species for the descriptor</li>
+<li><strong>species_Z</strong> (<em>int __OR__ ?</em><em>)</em>) – Atomic number of species</li>
+<li><strong>w</strong> (<em>float</em><em>) </em><em>__OR__ ?</em>) – Weight associated to each atomic type</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.power_so4">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">power_so4</code><a class="headerlink" href="#gap.descriptors.power_so4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Args:</p>
+<dl class="class">
+<dt id="gap.descriptors.power_so4.soap">
+<em class="property">class </em><code class="descname">soap</code><span class="sig-paren">(</span><em>cutoff</em>, <em>n_max</em>, <em>l_max</em>, <em>atom_sigma</em>, <em>cutoff_transition_width=0.5</em>, <em>cutoff_dexp=0</em>, <em>cutoff_scale=1.0</em>, <em>cutoff_rate=1.0</em>, <em>central_weight=1.0</em>, <em>central_reference_all_species=False</em>, <em>average=False</em>, <em>diagonal_radial=False</em>, <em>covariance_sigma0=0.0</em>, <em>normalise=True</em>, <em>basis_error_exponent=10.0</em>, <em>n_Z=1</em>, <em>n_species=1</em>, <em>xml_version=1426512068</em>, <em>species_Z=None</em>, <em>Z=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.power_so4.soap" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>species_Z</strong> – Atomic number of species</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom, 0 is the wild-card __OR__ Atomic numbers to be considered for central atom, must be a list</li>
+<li><strong>cutoff</strong> – Cutoff for soap-type descriptors</li>
+<li><strong>atom_sigma</strong> – Width of atomic Gaussians for soap-type descriptors</li>
+<li><strong>n_max</strong> – N_max (number of radial basis functions) for soap-type descriptors</li>
+<li><strong>l_max</strong> – L_max (spherical harmonics basis band limit) for soap-type descriptors</li>
+<li><strong>n_Z</strong> (<em>int</em>) – How many different types of central atoms to consider</li>
+<li><strong>n_species</strong> (<em>int</em>) – Number of species for the descriptor</li>
+<li><strong>cutoff_transition_width</strong> (<em>float</em>) – Cutoff transition width for soap-type descriptors</li>
+<li><strong>cutoff_dexp</strong> (<em>int</em>) – Cutoff decay exponent</li>
+<li><strong>cutoff_scale</strong> (<em>float</em>) – Cutoff decay scale</li>
+<li><strong>cutoff_rate</strong> (<em>float</em>) – Inverse cutoff decay rate</li>
+<li><strong>central_weight</strong> (<em>float</em>) – Weight of central atom in environment</li>
+<li><strong>central_reference_all_species</strong> (<em>bool</em>) – Place a Gaussian reference for all atom species densities. By default (F) only consider when neighbour is the same species as centre</li>
+<li><strong>covariance_sigma0</strong> (<em>float</em>) – sigma_0 parameter in polynomial covariance function</li>
+<li><strong>xml_version</strong> (<em>int</em>) – Version of GAP the XML potential file was created</li>
+<li><strong>basis_error_exponent</strong> (<em>float</em>) – 10^(-basis_error_exponent) is the max difference between the target and the expanded function</li>
+<li><strong>average</strong> (<em>bool</em>) – Whether to calculate averaged SOAP - one descriptor per atoms object. If false (default) atomic SOAP is returned.</li>
+<li><strong>diagonal_radial</strong> (<em>bool</em>) – Only return the n1=n2 elements of the power spectrum.</li>
+<li><strong>normalise</strong> (<em>bool</em>) – Normalise descriptor so magnitude is 1. In this case the kernel of two equivalent environments is 1.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.rdf">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">rdf</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>transition_width=0.2</em>, <em>Z=0</em>, <em>r_min=0.0</em>, <em>r_max=0.0</em>, <em>n_gauss=10</em>, <em>w_gauss=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.rdf" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for rdf-type descriptors</li>
+<li><strong>transition_width</strong> (<em>float</em>) – Width of transition region from 1 to 0</li>
+<li><strong>Z</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>r_min</strong> (<em>float</em>) – Atomic number of central atom</li>
+<li><strong>r_max</strong> (<em>float</em>) – Atomic number of central atom</li>
+<li><strong>n_gauss</strong> (<em>int</em>) – Atomic number of central atom</li>
+<li><strong>w_gauss</strong> (<em>float</em>) – Atomic number of central atom</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.sparse_method">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">sparse_method</code><a class="headerlink" href="#gap.descriptors.sparse_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>sparse_method options are:</p>
+<ul class="simple">
+<li><strong>RANDOM</strong>: default, chooses n_sparse random datapoints</li>
+<li><strong>PIVOT</strong>: based on the full covariance matrix finds the n_sparse “pivoting” points</li>
+<li><strong>CLUSTER</strong>: based on the full covariance matrix performs a k-medoid clustering into n_sparse clusters, returning the medoids</li>
+<li><strong>UNIFORM</strong>: makes a histogram of the data based on n_sparse and returns a data point from each bin</li>
+<li><strong>KMEANS</strong>: k-means clustering based on the data points</li>
+<li><strong>COVARIANCE</strong>: greedy data point selection based on the sparse covariance matrix, to minimise the GP variance of all datapoints</li>
+<li><strong>UNIQ</strong>: selects unique datapoints from the dataset</li>
+<li><strong>FUZZY</strong>: fuzzy k-means clustering</li>
+<li><strong>FILE</strong>: reads sparse points from a file</li>
+<li><strong>INDEX_FILE</strong>: reads indices of sparse points from a file</li>
+<li><strong>CUR_COVARIANCE</strong>: CUR, based on the full covariance matrix</li>
+<li><strong>CUR_POINTS</strong>: CUR, based on the datapoints</li>
+</ul>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.trihis">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">trihis</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>n_gauss=0</em>, <em>trihis_gauss_centre=None</em>, <em>trihis_gauss_width=None</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.trihis" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for trihis-type descriptors</li>
+<li><strong>n_gauss</strong> (<em>int</em>) – Number of Gaussians for trihis-type descriptors</li>
+<li><strong>trihis_gauss_centre</strong> – Number of Gaussians for trihis-type descriptors</li>
+<li><strong>trihis_gauss_width</strong> – Number of Gaussians for trihis-type descriptors</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.water_dimer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">water_dimer</code><span class="sig-paren">(</span><em>cutoff=0.0</em>, <em>cutoff_transition_width=0.5</em>, <em>monomer_cutoff=1.5</em>, <em>OHH_ordercheck=True</em>, <em>power=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.water_dimer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cutoff</strong> (<em>float</em>) – Cutoff for water_dimer-type descriptors</li>
+<li><strong>cutoff_transition_width</strong> (<em>float</em>) – Width of smooth cutoff region for water_dimer-type descriptors</li>
+<li><strong>monomer_cutoff</strong> (<em>float</em>) – Monomer cutoff for water_dimer-type descriptors</li>
+<li><strong>OHH_ordercheck</strong> (<em>bool</em>) – T: find water molecules. F: use default order OHH</li>
+<li><strong>power</strong> (<em>float</em>) – Power of distances to be used in the kernel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="gap.descriptors.water_monomer">
+<em class="property">class </em><code class="descclassname">gap.descriptors.</code><code class="descname">water_monomer</code><span class="sig-paren">(</span><em>cutoff=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#gap.descriptors.water_monomer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cutoff</strong> (<em>float</em>) – Cutoff for water_monomer-type descriptors</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="potentials.html" class="btn btn-neutral float-right" title="Using Potentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gap.html" class="btn btn-neutral" title="Learning GAP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Adam Fekete
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
