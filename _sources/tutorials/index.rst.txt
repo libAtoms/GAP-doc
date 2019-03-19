@@ -7,5 +7,5 @@ The following tutorials are currently available:
    :maxdepth: 2
 
    quippy-descriptor-tutorial.ipynb
-
+   gap_tutorial_in_docker.ipynb	
 
