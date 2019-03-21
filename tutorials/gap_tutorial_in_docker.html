@@ -450,9 +450,9 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="steps">
 <h2>steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">small</span> <span class="n">dataset</span> <span class="n">of</span> <span class="n">water</span> <span class="n">structures</span>
-    <span class="o">-</span> <span class="n">use</span> <span class="n">CP2K</span> <span class="k">if</span> <span class="n">you</span> <span class="n">havea</span> <span class="n">access</span> <span class="n">to</span> <span class="n">it</span>
+    <span class="o">-</span> <span class="n">use</span> <span class="n">CP2K</span> <span class="k">if</span> <span class="n">you</span> <span class="n">have</span> <span class="n">access</span> <span class="n">to</span> <span class="n">it</span>
     <span class="o">-</span> <span class="n">otherwise</span><span class="p">:</span> <span class="n">use</span> <span class="nb">any</span> <span class="n">simple</span> <span class="n">potential</span> <span class="n">implemented</span> <span class="ow">in</span> <span class="n">ASE</span><span class="p">,</span> <span class="n">just</span> <span class="k">for</span> <span class="n">trying</span> <span class="n">this</span> <span class="n">out</span> <span class="n">I</span> <span class="n">have</span> <span class="n">used</span> <span class="n">EMT</span> <span class="n">here</span>
-<span class="mf">1.</span> <span class="n">generate</span> <span class="n">e0</span> <span class="n">values</span>
+<span class="mf">1.</span> <span class="n">generate</span> <span class="n">e0</span> <span class="n">values</span><span class="p">:</span> <span class="n">isolated</span> <span class="n">atoms</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">dataset</span>
 <span class="mf">1.</span> <span class="n">separate</span> <span class="n">a</span> <span class="n">training</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">validation</span> <span class="n">dataset</span>
 <span class="mf">1.</span> <span class="o">**</span><span class="n">train</span> <span class="n">the</span> <span class="n">model</span><span class="o">**</span>
 <span class="mf">1.</span> <span class="n">look</span> <span class="n">at</span> <span class="n">the</span> <span class="n">outcome</span> <span class="n">of</span> <span class="n">the</span> <span class="n">model</span>
@@ -519,7 +519,7 @@ def rms_dict(x_ref, x_pred):
 </div>
 <div class="section" id="generating-data-only-with-ASE,-using-the-EMT-calculator">
 <h2>generating data only with ASE, using the EMT calculator<a class="headerlink" href="#generating-data-only-with-ASE,-using-the-EMT-calculator" title="Permalink to this headline">¶</a></h2>
-<p>This is only for the demonstration of how to do it, this run is will be done very fast. There is no practical use of the data beyond lerning the use teach_sparse, quip, etc. with it.</p>
+<p>This is only for the demonstration of how to do it, this run is will be done very fast. There is no practical use of the data beyond learning the use teach_sparse, quip, etc. with it.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
